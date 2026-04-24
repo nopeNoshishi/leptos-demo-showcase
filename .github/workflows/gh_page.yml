@@ -30,8 +30,7 @@ jobs:
 
       - name: Build
         run: |
-          cd app && trunk build --release --public-url "/leptos-demo-showcase/"
-          cp app/dist/index.html app/dist/404.html
+          cd app && trunk build --release --public-url "/leptos-demo-showcase/" && cp dist/index.html dist/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
