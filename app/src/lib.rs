@@ -7,7 +7,7 @@ use leptos_router::{
 #[component]
 pub fn App() -> impl IntoView {
     view! {
-        <Router>
+        <Router base="/leptos-demo-showcase">
             <Routes fallback=|| view! { <p>"Not Found"</p> }>
                 <Route path=path!("/") view=Home />
                 <Route path=path!("/leptos-fetch") view=showcase_leptos_fetch::Page />
