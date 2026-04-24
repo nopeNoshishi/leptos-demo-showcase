@@ -1,18 +1,19 @@
-# leptos-demo-showcase
+# Leptos Demo Showcase
 
-Showcase repository that demonstrate Leptos mini app.
+A collection of small Leptos demos, each exploring a specific pattern or library in the Leptos ecosystem.
 
 ## Repository Structure
 
 ```
 leptos-demo-showcase/
-├── Cargo.toml              # workspace root
-├── app/                    # main Leptos app — routing & Trunk build
+├── Cargo.toml              # workspace root (shared dependencies)
+├── app/                    # main Leptos SPA — routing & Trunk build
 └── showcase/
-    └── leptos-fetch/       # lib crate — leptos-fetch showcase page
+    ├── leptos-fetch/       # leptos-fetch: query cache, devtools, refetch
+    └── transition-let/     # let: binding pattern with TransitionLet
 ```
 
-Each showcase under `showcase/` is a library crate that exposes a `Page` component. The `app/` crate imports them and routes between pages via `leptos_router`.
+Each showcase under `showcase/` is a library crate that exposes a `#[component] pub fn Page()`. The `app/` crate imports them and routes between pages via `leptos_router`.
 
 ## Watch and Serve
 
@@ -24,6 +25,7 @@ trunk serve
 
 ## Showcases
 
-| Directory | Description |
+| Directory | What it demonstrates |
 |---|---|
-| [`showcase/leptos-fetch/`](./showcase/leptos-fetch/) | leptos-fetch demo — query cache, auto refresh, force refetch, devtools |
+| [`showcase/leptos-fetch/`](./showcase/leptos-fetch/) | [`leptos-fetch`](https://github.com/nicholasgasior/leptos-fetch) — query cache, auto refresh, force refetch, devtools |
+| [`showcase/transition-let/`](./showcase/transition-let/) | `let:` binding pattern — building components that expose async results via `let:name` |
