@@ -9,8 +9,9 @@ use components::{FetchByLeptosFetch, FetchByLeptosFetchV2, FetchByLocalResource}
 use leptos::prelude::*;
 use leptos_fetch::{QueryClient, QueryDevtools};
 
-/// Example application using Leptos Fetch and LocalResource
-pub fn example_app() -> impl IntoView {
+/// Entry point for the leptos-fetch demo page
+#[component]
+pub fn Page() -> impl IntoView {
     // Provide the QueryClient to the context
     let client = QueryClient::new().provide();
 

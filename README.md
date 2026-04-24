@@ -1,32 +1,29 @@
-# Leptos Fetch Example
+# leptos-demo-showcase
 
-This is a simple demo example of using Leptos Fetch to manage data fetching in a Leptos application.
+Showcase repository that demonstrate Leptos mini app.
+
+## Repository Structure
+
+```
+leptos-demo-showcase/
+├── Cargo.toml              # workspace root
+├── app/                    # main Leptos app — routing & Trunk build
+└── showcase/
+    └── leptos-fetch/       # lib crate — leptos-fetch showcase page
+```
+
+Each showcase under `showcase/` is a library crate that exposes a `Page` component. The `app/` crate imports them and routes between pages via `leptos_router`.
 
 ## Watch and Serve
 
 ```sh
-# Need to install `trunk` for build
+# Requires `trunk` — install via https://trunkrs.dev
+cd app
 trunk serve
 ```
 
-You can try to see the demo at https://nopenoshishi.github.io/leptos-fetch-demo/.
+## Showcases
 
-## Example Video
-
-### Leptos Only
-
-![](assets/local_resource.gif)
-
-### Leptos Fetch
-
-![](assets/leptos_fetch.gif)
-
-### Auto Refresh
-
-![](assets/refresh.gif)
-
-### Force Refetch
-![](assets/force_refetch.gif)
-
-### Devtools
-![](assets/devtools.gif)
+| Directory | Description |
+|---|---|
+| [`showcase/leptos-fetch/`](./showcase/leptos-fetch/) | leptos-fetch demo — query cache, auto refresh, force refetch, devtools |

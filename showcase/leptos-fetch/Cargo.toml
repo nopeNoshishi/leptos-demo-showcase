@@ -1,0 +1,12 @@
+[package]
+name = "showcase-leptos-fetch"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+leptos = { workspace = true }
+leptos-fetch = { workspace = true }
+serde = { workspace = true }
