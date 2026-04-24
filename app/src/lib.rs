@@ -29,12 +29,18 @@ fn Home() -> impl IntoView {
             <main class="mx-auto max-w-4xl px-4 py-8">
                 <ul class="space-y-2">
                     <li>
-                        <A href="/leptos-demo-showcase/leptos-fetch" attr:class="text-indigo-600 hover:underline">
+                        <A
+                            href="/leptos-demo-showcase/leptos-fetch"
+                            attr:class="text-indigo-600 hover:underline"
+                        >
                             "leptos-fetch"
                         </A>
                     </li>
                     <li>
-                        <A href="/leptos-demo-showcase/transition-let" attr:class="text-indigo-600 hover:underline">
+                        <A
+                            href="/leptos-demo-showcase/transition-let"
+                            attr:class="text-indigo-600 hover:underline"
+                        >
                             "transition-let"
                         </A>
                     </li>
