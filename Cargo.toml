@@ -4,9 +4,11 @@ resolver = "2"
 
 [workspace.dependencies]
 showcase-leptos-fetch = { path = "showcase/leptos-fetch" }
+showcase-transition-let = { path = "showcase/transition-let" }
 
 console_error_panic_hook = { version = "0.1.7" }
 leptos = { version = "0.8.19", features = ["csr"] }
 leptos_router = { version = "0.8.13" }
 leptos-fetch = { version = "0.4.10", features = ["devtools-always"] }
 serde = { version = "1.0", features = ["derive"] }
+gloo-timers = { version = "0.3", features = ["futures"] }

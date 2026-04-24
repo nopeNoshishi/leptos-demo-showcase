@@ -11,6 +11,7 @@ pub fn App() -> impl IntoView {
             <Routes fallback=|| view! { <p>"Not Found"</p> }>
                 <Route path=path!("/") view=Home />
                 <Route path=path!("/leptos-fetch") view=showcase_leptos_fetch::Page />
+                <Route path=path!("/transition-let") view=showcase_transition_let::Page />
             </Routes>
         </Router>
     }
@@ -30,6 +31,11 @@ fn Home() -> impl IntoView {
                     <li>
                         <A href="/leptos-fetch" attr:class="text-indigo-600 hover:underline">
                             "leptos-fetch"
+                        </A>
+                    </li>
+                    <li>
+                        <A href="/transition-let" attr:class="text-indigo-600 hover:underline">
+                            "transition-let"
                         </A>
                     </li>
                 </ul>

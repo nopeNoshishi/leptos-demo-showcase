@@ -8,7 +8,7 @@ public_url = "/"
 filehash = true
 
 [watch]
-watch =  ["src"]
+watch =  ["src", "../showcase"]
 ignore = []
 
 [serve]
@@ -18,5 +18,4 @@ open = false
 no_spa = false
 
 [clean]
-dist = "dist"
 cargo = false

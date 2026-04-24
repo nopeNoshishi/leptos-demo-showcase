@@ -8,3 +8,4 @@ console_error_panic_hook = { workspace = true }
 leptos = { workspace = true }
 leptos_router = { workspace = true }
 showcase-leptos-fetch = { workspace = true }
+showcase-transition-let = { workspace = true }

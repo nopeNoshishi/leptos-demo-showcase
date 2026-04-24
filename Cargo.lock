@@ -51,6 +51,7 @@ dependencies = [
  "leptos",
  "leptos_router",
  "showcase-leptos-fetch",
+ "showcase-transition-let",
 ]
 
 [[package]]
@@ -1646,6 +1647,14 @@ dependencies = [
  "leptos",
  "leptos-fetch",
  "serde",
+]
+
+[[package]]
+name = "showcase-transition-let"
+version = "0.1.0"
+dependencies = [
+ "gloo-timers",
+ "leptos",
 ]
 
 [[package]]
