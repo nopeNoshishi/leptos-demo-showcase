@@ -65,11 +65,7 @@ pub fn Page() -> impl IntoView {
     view! {
         <div class="min-h-screen bg-gray-50 text-gray-900">
             <PageHeader on_refetch />
-            <ResourceGrid
-                count_1s resource_1s
-                count_2s resource_2s
-                count_err resource_err
-            />
+            <ResourceGrid count_1s resource_1s count_2s resource_2s count_err resource_err />
         </div>
     }
 }
@@ -128,10 +124,7 @@ fn ResourceCard(
                 <h2 class="text-sm font-semibold">{title}</h2>
                 <span class="badge-outline text-xs px-2 py-0.5">"× " {count}</span>
             </header>
-            <div
-                class="p-4 transition-opacity duration-200"
-                class:opacity-30=move || pending.get()
-            >
+            <div class="p-4 transition-opacity duration-200" class:opacity-30=move || pending.get()>
                 <TransitionLet
                     resource=resource
                     fallback=loading_fallback

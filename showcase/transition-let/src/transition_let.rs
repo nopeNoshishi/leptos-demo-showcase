@@ -52,10 +52,14 @@ where
 
     view! {
         <Transition fallback=fallback set_pending=pending_setter>
-            {move || resource.get().map(|res| match res {
-                Ok(data) => children(data).into_any(),
-                Err(e) => error_view(e).into_any(),
-            })}
+            {move || {
+                resource
+                    .get()
+                    .map(|res| match res {
+                        Ok(data) => children(data).into_any(),
+                        Err(e) => error_view(e).into_any(),
+                    })
+            }}
         </Transition>
     }
 }
