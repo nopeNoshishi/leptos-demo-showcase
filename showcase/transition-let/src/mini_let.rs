@@ -13,10 +13,10 @@ use leptos::prelude::*;
 /// }
 /// ```
 #[component]
-pub fn MiniI32TripleLet<F, V>(value: i32, children: F) -> impl IntoView
+pub fn MiniI32TripleLet<CnFn, View>(value: i32, children: CnFn) -> impl IntoView
 where
-    F: Fn(i32) -> V + Send + Clone + 'static,
-    V: IntoView + 'static,
+    CnFn: Fn(i32) -> View + Send + Clone + 'static,
+    View: IntoView + 'static,
 {
     children(value * 3)
 }
