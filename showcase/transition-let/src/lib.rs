@@ -107,6 +107,21 @@ fn ResourceGrid(
     }
 }
 
+fn use_bump_flash(count: impl Fn() -> u32 + 'static) -> ReadSignal<bool> {
+    let (flash, set_flash) = signal(false);
+    Effect::new(move |_| {
+        if count() == 0 {
+            return;
+        }
+        set_flash.set(true);
+        leptos::task::spawn_local(async move {
+            TimeoutFuture::new(400).await;
+            set_flash.set(false);
+        });
+    });
+    flash
+}
+
 #[component]
 fn ResourceCard(
     title: &'static str,
@@ -117,12 +132,24 @@ fn ResourceCard(
         || view! { <p class="text-sm text-gray-400 animate-pulse">"Loading..."</p> };
     let error_view = |e: String| view! { <p class="text-sm text-red-500">{e}</p> };
     let pending = RwSignal::new(false);
+    let flash = use_bump_flash(move || count.get());
 
     view! {
         <div class="card">
             <header class="p-4 border-b flex items-center justify-between">
                 <h2 class="text-sm font-semibold">{title}</h2>
-                <span class="badge-outline text-xs px-2 py-0.5">"× " {count}</span>
+                <span
+                    class="badge-outline text-xs px-2 py-0.5 transition-all ease-out inline-block"
+                    class:duration-100=move || flash.get()
+                    class:duration-500=move || !flash.get()
+                    class:scale-125=move || flash.get()
+                    class:bg-indigo-500=move || flash.get()
+                    class:text-white=move || flash.get()
+                    class:border-indigo-500=move || flash.get()
+                >
+                    "× "
+                    {count}
+                </span>
             </header>
             <div class="p-4 transition-opacity duration-200" class:opacity-30=move || pending.get()>
                 <TransitionLet
